@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  version: MyString
+  description: MyText
+  original_description: MyText
+  summary: MyText
+  build: MyString
+  arch: MyString
+  size_compressed: 1
+  size: 
+  filename: MyString
+
+two:
+  version: MyString
+  description: MyText
+  original_description: MyText
+  summary: MyText
+  build: MyString
+  arch: MyString
+  size_compressed: 1
+  size: 
+  filename: MyString
