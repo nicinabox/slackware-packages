@@ -3,7 +3,7 @@ require 'httparty'
 
 class SlackwareVersion < ActiveRecord::Base
   validates :version, uniqueness: true
-  has_many :versions
+  has_many :versions, dependent: :delete_all
 
   class << self
     def populate(version)
@@ -17,7 +17,9 @@ class SlackwareVersion < ActiveRecord::Base
 
         unless File.exists? packages_txt
           File.open(packages_txt, "w") do |f|
-            f.write HTTParty.get(host + file).parsed_response
+            response = HTTParty.get(host + file)
+            response.body.force_encoding('UTF-8')
+            f.write response.body
           end
         end
 
