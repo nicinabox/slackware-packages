@@ -4,7 +4,7 @@ class PackagesController < ApplicationController
   end
 
   def show
-    @package = Package.find_by(slug: params[:id])
+    @package = Package.friendly.find params[:id]
     render json: @package.to_json(
       include: {
         versions: {
