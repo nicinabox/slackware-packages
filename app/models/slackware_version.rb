@@ -45,9 +45,11 @@ class SlackwareVersion < ActiveRecord::Base
             description: data[:description],
             original_description: data[:original_description],
             filename: data[:filename],
+            location: data[:location],
+            path: data[:path],
             size_uncompressed: data[:size][:uncompressed],
             size_compressed: data[:size][:compressed],
-            slackware_version_id: slackware_version.id
+            slackware_version: slackware_version
           )
 
           puts "Saved #{package.name} (#{total - i} remaining)"
