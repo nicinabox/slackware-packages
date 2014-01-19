@@ -21,7 +21,7 @@ class SlackwareVersion < ActiveRecord::Base
           end
         end
 
-        parser = Slapp::Parser.new(packages_txt)
+        parser = Slapp::Parser.new(packages_txt, version)
         pkgs   = parser.packages
         total  = pkgs.count
 
@@ -60,11 +60,11 @@ class SlackwareVersion < ActiveRecord::Base
   private
 
     def host
-      'http://slackware.cs.utah.edu/pub/slackware'
+      'http://slackware.cs.utah.edu/pub'
     end
 
     def version_dir(version)
-      "/slackware-#{version}"
+      "/slackware/slackware-#{version}"
     end
   end
 
