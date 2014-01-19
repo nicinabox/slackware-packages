@@ -2,7 +2,7 @@ class Version < ActiveRecord::Base
   belongs_to :package
   belongs_to :slackware_version
 
-  def fullpath
-    "/slackware/slackware-#{slackware_version.version}#{path}"
+  def package_name
+    file_name.gsub(/\.\w{3}$/, '')
   end
 end

@@ -8,7 +8,7 @@ class PackagesController < ApplicationController
     render json: @package.to_json(
       include: {
         versions: {
-          methods: [:slackware_version, :fullpath]
+          methods: [:slackware_version, :package_name]
         }
       }
     )

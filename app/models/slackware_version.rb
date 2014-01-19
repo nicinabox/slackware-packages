@@ -44,7 +44,7 @@ class SlackwareVersion < ActiveRecord::Base
             summary: data[:summary],
             description: data[:description],
             original_description: data[:original_description],
-            filename: data[:filename],
+            file_name: data[:file_name],
             location: data[:location],
             path: data[:path],
             size_uncompressed: data[:size][:uncompressed],
