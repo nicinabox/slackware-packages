@@ -7,7 +7,7 @@ class SlackwaresController < ApplicationController
   end
 
   def show
-    @slackware = Rails.cache.fetch('slackware_version', expires_in: 15.minutes) do
+    @slackware = Rails.cache.fetch("slackware_version_#{params[:id]}", expires_in: 15.minutes) do
       SlackwareVersion.includes(:versions).find(params[:id])
     end
 
