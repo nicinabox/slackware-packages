@@ -4,7 +4,11 @@ class Version < ActiveRecord::Base
 
   default_scope { order('version') }
 
-  def package_name
+  def tarball_name
     file_name.gsub(/\.\w{3}$/, '')
+  end
+
+  def patch
+    path.include? 'patches'
   end
 end

@@ -1,6 +1,6 @@
-json.(version,  :id, :version, :build, :arch,
+json.(version,  :id, :version, :build, :arch, :patch,
                 :size_compressed, :size_uncompressed,
                 :summary, :description,
-                :file_name, :path)
+                :tarball_name, :file_name, :path)
 
 json.slackware version.slackware_version.version
