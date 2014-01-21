@@ -1,6 +1,8 @@
 SlackwarePackages::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  config.action_controller.page_cache_directory = "#{Rails.root.to_s}/tmp/cache"
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 

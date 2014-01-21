@@ -1,4 +1,6 @@
-class ApplicationController < ActionController::API
+class ApplicationController < ActionController::Base
+  self.perform_caching = true
+
   before_filter :set_format
 
   def set_format

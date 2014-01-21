@@ -11,6 +11,7 @@ gem 'pg'
 gem 'slapp'
 gem 'httparty'
 gem 'friendly_id'
+gem 'actionpack-page_caching'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

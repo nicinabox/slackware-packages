@@ -1,4 +1,6 @@
 class PackagesController < ApplicationController
+  caches_page :index, :show
+
   def index
     @packages = Package.all
     render :index
@@ -7,12 +9,5 @@ class PackagesController < ApplicationController
   def show
     @package = Package.friendly.find params[:id]
     render :show
-    # render json: @package.to_json(
-    #   include: {
-    #     versions: {
-    #       methods: [:slackware_version, :package_name]
-    #     }
-    #   }
-    # )
   end
 end
