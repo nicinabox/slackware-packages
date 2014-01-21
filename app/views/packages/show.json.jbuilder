@@ -1,10 +1,4 @@
 json.extract! @package, :id, :name
-
-json.versions @package.versions do |version|
-  json.(version,  :id, :version, :build, :arch,
-                  :size_compressed, :size_uncompressed,
-                  :summary, :description,
-                  :file_name, :path)
-
-  json.slackware version.slackware_version.version
-end
+json.versions @package.versions,
+  partial: 'packages/version',
+  as: :version
