@@ -16,7 +16,7 @@ List of packages for a Slackware version (`:id`)
 
 **/packages**
 
-List of all packages for all Slackware versions
+List of all packages for all Slackware versions. Also accepts a query parameter (`?q=slug`).
 
 **/packages/:id**
 
