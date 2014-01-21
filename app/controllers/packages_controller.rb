@@ -2,7 +2,12 @@ class PackagesController < ApplicationController
   caches_page :index, :show
 
   def index
-    @packages = Package.all
+    if params[:q]
+      @packages = Package.friendly.where "slug LIKE ?", "%#{params[:q]}%"
+    else
+      @packages = Package.all
+    end
+
     render :index
   end
 
