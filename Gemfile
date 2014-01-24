@@ -8,7 +8,7 @@ gem 'rails-api'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
-gem 'slapp'
+gem 'slapp', '~> 0.2.3'
 gem 'httparty'
 gem 'friendly_id'
 gem 'actionpack-page_caching'
