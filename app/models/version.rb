@@ -4,11 +4,11 @@ class Version < ActiveRecord::Base
 
   default_scope { order('version') }
 
-  def tarball_name
-    file_name.gsub(/\.\w{3}$/, '')
-  end
-
   def patch
     path.include? 'patches'
+  end
+
+  def x64
+    path.include? 'slackware64'
   end
 end
